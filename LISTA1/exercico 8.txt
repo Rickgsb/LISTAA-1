@@ -1,0 +1,102 @@
+
+"PROJETO.CS"
+
+using System;
+using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PJEX
+{
+    internal class Valores
+    {
+        //atributos
+        private double x;
+        private double y;
+        private double valores;
+
+
+
+
+        //metodos 
+        public void setXnumero(double p)
+        {
+            x = p;
+        }
+
+        public void setYnumero(double p)
+        {
+            y = p;
+        }
+
+
+        public double getXnumero()
+        {
+            return x;
+        }
+
+        public double getYnumero()
+        {
+            return y;
+        }
+
+        public double getValores()
+        {
+            return valores;
+        }
+
+        public void calcularValores()
+        {
+            if (x >= y)
+            {
+                Console.WriteLine("O maior  número é: " + x);
+            }
+            else
+            {
+                Console.WriteLine("O maior  número é: " + y);
+
+            }
+
+        }
+    }
+}
+
+
+
+
+
+"PROGRAM.CS"
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PJEX
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Valores val;
+            val = new Valores();
+
+
+            Console.Write("Digite o primeiro valor: ");
+            val.setXnumero(double.Parse(Console.ReadLine()));
+
+            Console.Write("Digite o segundo valor: ");
+            val.setYnumero(double.Parse(Console.ReadLine()));
+
+
+
+            val.calcularValores();
+
+            
+        }
+    }
+}
+

@@ -1,0 +1,93 @@
+
+
+"PROGRAM.CS"
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PJEX
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Cotacao cot;
+            cot = new Cotacao();
+
+
+            Console.Write("Digite valor de cotação do dolar: ");
+            cot.setVdolar(double.Parse(Console.ReadLine()));
+
+            Console.Write("Digite a quantidade em dolares: ");
+            cot.setCdolar(double.Parse(Console.ReadLine()));
+
+
+
+            cot.calcularReais();
+
+            Console.WriteLine("Valor correspondente em Reais: {0} com base em sua cotação: {1} e sua quantidade : {2}", cot.getReais(), cot.getVdolar(), cot.getCdolar());
+        }
+    }
+}
+
+
+
+
+
+"PROJETO.CS"
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PJEX
+{
+    internal class Cotacao
+    {
+        //atributos
+        private double vdolar;
+        private double cdolar;
+        private double reais;
+
+
+        //metodos 
+        public void setVdolar(double p)
+        {
+            vdolar = p;
+        }
+
+        public void setCdolar(double p)
+        {
+            cdolar = p;
+        }
+
+
+        public double getVdolar()
+        {
+            return vdolar;
+        }
+
+        public double getCdolar()
+        {
+            return cdolar;
+        }
+
+
+        public double getReais()
+        {
+            return reais;
+        }
+
+
+        public void calcularReais()
+        {
+            reais = vdolar * cdolar;
+        }
+    }
+}
+

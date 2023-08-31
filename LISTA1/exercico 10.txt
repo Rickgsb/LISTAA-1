@@ -1,0 +1,108 @@
+
+"PROGRAM.CS"
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PJEX
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Valores val;
+            val = new Valores();
+
+
+            Console.Write("Digite a base: ");
+            val.setVbase(double.Parse(Console.ReadLine()));
+
+            Console.Write("Digite a alturar: ");
+            val.setValtura(double.Parse(Console.ReadLine()));
+
+
+
+            val.calcularValores();
+
+
+        }
+    }
+}
+
+
+"PROJECT.CS"
+
+
+   using System;
+using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PJEX
+{
+    internal class Valores
+    {
+        //atributos
+        private double bas;
+        private double alt;
+        private double resultado;
+
+
+
+
+        //metodos 
+        public void setVbase(double p)
+        {
+            bas = p;
+        }
+
+        public void setValtura(double p)
+        {
+            alt = p;
+        }
+
+
+        public double getVbase()
+        {
+            return bas;
+        }
+
+        public double getValtura()
+        {
+            return alt;
+        }
+
+        public double getValores()
+        {
+            return resultado;
+        }
+
+
+        public void calcularValores()
+
+
+        {
+
+            resultado = bas * alt;
+
+            if (resultado > 100)
+            {
+                Console.WriteLine("Terreno grande");
+                Console.WriteLine("Com area de: " + resultado);
+            }
+
+            else
+            {
+                Console.WriteLine("Terreno pequeno");
+                Console.WriteLine("Com area de: " + resultado);
+
+
+            }
+        }
+    }
+}

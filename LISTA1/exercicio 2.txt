@@ -1,0 +1,58 @@
+namespace EX2
+{
+    internal class Quadrado
+    {
+       
+        private int l1;
+        private int a;
+
+    
+        public void setAresta(int p)
+        {
+            l1 = p;
+        }
+
+        public int getAresta()
+        {
+            return l1;
+        }
+
+        public int getArea()
+        {
+            return a;
+        }
+
+        public void calcularArea()
+        {
+            a = l1 * l1;
+        }
+    }
+}
+
+
+"PROGRAM.CS"
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace listaPOOex1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Quadrado qua;
+            qua = new Quadrado();
+
+            Console.Write("Digite seu lado: ");
+            qua.setAresta(int.Parse(Console.ReadLine()));
+
+            qua.calcularArea();
+
+            Console.WriteLine("Resultado da area de um quadrado cujo é: {1} e aresta de: {0}", qua.getAresta(), qua.getArea());
+        }
+    }
+}

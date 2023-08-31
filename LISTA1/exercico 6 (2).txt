@@ -1,0 +1,73 @@
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PJEX06
+{
+    internal class Converter
+    {
+        //atributos
+        private double mm;
+        private double km;
+        
+
+        //metodos 
+        public void setMilhas(double p)
+        {
+            mm = p;
+        }
+
+
+        public double getMilhas()
+        {
+            return mm;
+        }
+
+        public double getQuilometros()
+        {
+            return km;
+        }
+
+
+        public void calcularQuilometros()
+        {
+            km =(mm*1.852);
+        }
+    }
+}
+
+
+"PROGRAM.CS"
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            PJEX06.Converter con;
+            con = new PJEX06.Converter();
+
+
+            Console.Write("Digite sua Milha marítima: ");
+            con.setMilhas(double.Parse(Console.ReadLine()));
+
+         
+
+            con.calcularQuilometros();
+
+            Console.WriteLine("Conversao Quilometros: {0} com base em sua milha maritima: {1}", con.getQuilometros(), con.getMilhas() );
+        }
+    }
+}
+
